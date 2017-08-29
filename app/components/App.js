@@ -1,14 +1,9 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { footer } from '../styles/footer.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const App = ({ children }) =>
     <div>
-        { children }
-        <footer className={footer}>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-        </footer>
+        {children}
     </div>;
 
 App.propTypes = {

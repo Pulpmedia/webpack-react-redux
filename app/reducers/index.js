@@ -1,27 +1,20 @@
 import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
-import * as types from '../actions/types';
-import { defaultState as userState} from './user.js';
-import user from './user.js';
+import { reducer as formReducer } from 'redux-form';
 
-const filter = (state = '', action) => {
-    switch (action.type) {
-        case types.FILTER:
-            return action.filter;
-        default:
-            return state;
-    }
-};
+import user from '../common/reducers/user';
+import goldmeeting from '../common/reducers/goldmeeting';
 
 
 const rootReducer = combineReducers({
-    filter,
+    routing,
     user,
-    routing
+    goldmeeting,
+    form: formReducer
 });
 
 export default rootReducer;
 
 export const initialStates = {
-    userState
+
 };
